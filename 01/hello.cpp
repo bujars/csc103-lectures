@@ -11,12 +11,13 @@ int main() /* this is where your program starts */
 	std::cout << "hello world.\n"; /* print message to stdout */
 
 	/* NOTE NOTE NOTE bujar's self trial */
-	std::cout << "Bujar\n"; 
+	std::cout << "Bujar\n";
 	std::cout << "Sefa\n";
+    std::cout <<  "In library\n";
 	std::cout << "Basically trying to get the hang of cout\n";
-	
-	
-	
+
+
+
 	return 0;
 	/* NOTE: this return value is how our program communicates
 	 * back to the shell that started it.  In this context, 0 means
