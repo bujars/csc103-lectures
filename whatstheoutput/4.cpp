@@ -15,3 +15,13 @@ int main()
 	cout << "i == " << i << "\n";
 	return 0;
 }
+/* Assumptions:
+* i == 0
+* i == 6
+* i == 12
+* i == 15 //The last int.
+*/
+
+// --ASSUMPTION WAS TRUE! 0 does still get counted as being divisble.
+
+//Function prints integers divisible by 2 and 3 and the last value of the after cant be put in loop.

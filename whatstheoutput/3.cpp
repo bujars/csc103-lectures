@@ -16,3 +16,12 @@ int main()
 	cout << "x == " << x << "\n";
 	return 0;
 }
+
+/* Assumptions:
+* At first it was x == 9, 7, 5, 3.
+* I then realized that the cout inside the if statement only prints when that is true, and that the x-=2 code isn't inside and still continues until x < 0.
+* For the x%5 part of the code, it runs for 9, 7, 3, 1 but not 5, so I assume that that expression is true when there is a remainder.
+* Hence then 5 is never actually printed.
+The code again, stops at -1 because that is < 0.
+* Corrected Assumptuions : 9, 7, 3, 1, -1 ---Which is what gets outputted.
+*/

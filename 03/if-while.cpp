@@ -124,7 +124,7 @@ int main()
 	int val; //Variable form input
 	cout << "Lets find the exponent of the largest power of a number you give.\nPlease enter your integer.\n";
 	cin >> val;
-	while((val/2)>= 2){
+	while((val/2)>= 2){ ///This computes the log. Not what we are looking for. So if we have something like 41, this will still produce some sort of answer, whn it realy shouldnt because 2 was "never" a prime of it. -- Feb 8th, 2018  
 		divisions++;
 		val/=2;
 	}
