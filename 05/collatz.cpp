@@ -19,10 +19,42 @@ int main()
 	/* TODO: write a program that tests the conjecture for arbitrarily
 	 * many integers, provided on standard input.  (Just print the input
 	 * and the number of steps it required before terminating.) */
+
+	int n;
+	int original;
+	int steps = 0; 
+	int maxN;
+	while(cin >> n){
+		original = n;
+		maxN = n;
+		if(n == 1){
+			steps++;
+			//cout << "The integer is " << original << ". The number of steps it took was " << steps << ".\n";
+			//return 0;
+			//break;
+		}
+		else {
+			while(n > 1){
+				if(n > maxN)
+					maxN = n;
+				if(n % 2 == 0){
+					n = n / 2;
+					steps++;
+				}
+				else{
+					n = (n *3) +1;
+					steps++;
+				}
+			}
+		}
+		cout << "The integer is " << original << ". The number of steps it took is " << steps << ". The maximal intermediate value is "<< maxN << ".\n";
+		steps = 0;
+	}
+	
 	return 0;
 }
 
 /* TODO: keep track of the maximal intermediate value and print that out
  * along with the result. */
-
+ /* NOTE NOTE NOTE I added this between */
 // vim:foldlevel=1

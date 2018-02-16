@@ -16,7 +16,28 @@ int main()
 	 * */
 	/* TODO: finish our fibonacci code from class, and generalize
 	 * to lucas sequences (see above). */
+	int n;
+	int p = 1;
+	int q = 0;
+	int i = 0;
+	while(cin >> n){
+		if(n < 1)
+			p = 0;
+		while(n > i){
+			int temp = q;
+			q = p;
+			p =  q + temp;
+			i++;
+		}
+		cout << "The Licas sequence of " << n << " is " << p << ".\n";
+		p = 1;
+		q = 0;
+		i = 0;
+	}
 
+
+	
+	
 	return 0;
 }
 
