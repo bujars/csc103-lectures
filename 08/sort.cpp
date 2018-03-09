@@ -59,3 +59,36 @@ int main()
  * $ head -c 60 /dev/urandom | xxd -p -c 3 | tr 'a-f' '1-6' | ./sort
  * and see if the numbers come out in order.
  * */
+
+
+#if 0
+	/* Note Practice of Sort 3/8/16 */
+ //To sort, we need an vector. To be more efficent, use the actual not a copy. Only changing need be done, not returning
+
+void sort(vector<int> v){
+ //any variables? none
+ //loop? Yes, to go through and sort
+	for(int i = 0; i < v.size(); i++){
+			//before going on furthur, is it the size? WHy?
+			//we are going through the loop to sort, basically keep
+			//bringing the values in front and push out.
+			//so i guess stop halfway because if we have the beginning
+			//sorted, the rest should be? I mean we keep swapping the
+			//values no? something to keep thinking about
+		//we first want the smallest value to swap with the first
+		// value?? ---Like where the value is because that's all a vector know about itself
+		// i think we need this somehow outside. think about if if we keep it in the loop, it might mess up up ? lets try it in the loop even though it is technically its own function.
+		int smallestIndex;
+		for(int j = 0; j < v.size(); j++){
+
+		}
+	}
+
+}
+
+
+
+#endif
+
+
+
