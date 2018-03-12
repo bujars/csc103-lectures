@@ -104,19 +104,23 @@ int isSubstring(const string& s1, const string& s2) {
 	 * than that length -- so use a while loop??*/
    //int s1Len = s1.len(); //Not needed
   	 for(int i = 0; i < s1.length(); i++){
-		if(s1[i] == s2[i]){
+      if(s1[i] == s2[i]){
     		 for(int j = i+1; j < s1.length(); j++){
 				 /* start from position i+1 to keep checking the rest of
 				  * the characters*/
        			if(!(s1[j] == s2[j]))
         			 b = false;
+               break;
+
       			else
          			b = true;
 			 }
     		if(b == true)
        			index = i;
      		}
+        //b == true; //Added 3/11/18 this is so it resets back to true after each i check. --Actually, the way it was before should workkkk
    		}
+
 	}
 
   return index;
@@ -146,4 +150,5 @@ int main() {
    bool tF = isPalindrome(pal);
    cout << tF << "\n";
 	return 0;
+
 }
