@@ -96,11 +96,12 @@ int main() {
 		/* B[i] == *(B+i) == *(i+B) ==? i[B] */
 		cout << i << "[B] == " << i[B] << endl;
 	}
-
+#if 0
 	return 0;
 	/* TODO: declare another pointer (say p2) to a character, initialize it
 	 * just as we did before, and print out (p+i) and then (p2+i) for small
 	 * values of i. Notice that the difference in memory addresses changes. */
+#endif
 }
 
 /* TODO: write a function that returns void, and takes two
