@@ -4,6 +4,9 @@ using std::cin;
 using std::cout;
 using std::endl;
 
+void shift(int* H, size_t len, size_t n);
+void swapP(int* p1, int* p2);
+
 int main() {
 	/* ARRAYS: OVERVIEW
 	 * Arrays in C/C++: kind of like a "dumb" version of std::vector.
@@ -14,7 +17,7 @@ int main() {
 	const size_t size = 10;
 	int A[size]; /* A is an array of 10 integers. */
 	for (size_t i = 0; i < size; i++) {
-		/* store list of cubes in the array: */
+		 /*store list of cubes in the array: */
 		A[i] = i*i*i; /* use the bracket operator to
 		                  access elements, just like vectors */
 	}
@@ -96,12 +99,41 @@ int main() {
 		/* B[i] == *(B+i) == *(i+B) ==? i[B] */
 		cout << i << "[B] == " << i[B] << endl;
 	}
-#if 0
+
+	char c = 'b';
+	char d = 'd';
+	char* p1 = &c;
+	char* p2 = &d;
+	cout << p1 << " " << p2 << " " << (p1+1) << " " << (p2+1) << " " << (p1+4) << " "<< (p2+4) << endl;
+//#if 0
+
+
+	//NOTE NOTE NOTE testing shift
+	int G[] = {0, 1, 2, 3, 4, 5};
+	int* H = G;
+	size_t len = 6;
+	size_t n = 2;
+	shift(H, len, n);
+	for(int i = 0; i < len; i++){
+		cout << H[i] << " ";
+		}
+		cout << endl;
+
+		int fu = 1;
+		int gu = 2;
+		int* pp1 = &fu;
+		int* pp2 = &gu;
+		cout << fu << " " << gu << endl;
+		swapP(pp1, pp2);
+		cout << fu << " " << gu << endl;
+
+
+
 	return 0;
 	/* TODO: declare another pointer (say p2) to a character, initialize it
 	 * just as we did before, and print out (p+i) and then (p2+i) for small
-	 * values of i. Notice that the difference in memory addresses changes. */
-#endif
+	 * values of i. Notice that the difference in memory addresses changes. */ //DiD.
+//#endif
 }
 
 /* TODO: write a function that returns void, and takes two
@@ -110,12 +142,18 @@ int main() {
  * what I'm asking for...
  * */
 
+void swapP(int* p1, int* p2){
+	int temp = *p1;
+	*p1 = *p2;
+	*p2 = temp;
+	}
+
 /* TODO: if the type of p is int*, can you guess what the
  * type of &p would be? */
 
-void shift(int* A /* the array */,
+void shift(int* H /* the array */,
 		size_t len /* #elements of A */,
-		size_t n /* shift amount */);
+		size_t n /* shift amount */){
 /* TODO: write a function that performs a "circular shift" on
  * an array of integers.  For example, if the input array
  * contained 0,1,2,3,4 and we shifted by 2, the new array would
@@ -128,3 +166,25 @@ void shift(int* A /* the array */,
  * take n*len steps.  You should be able to do this in c*len steps
  * for some small constant c, not depending on len.
  * */
+	for(size_t i = 0; i < len/2; i++){
+		int temp = H[i];
+		H[i] = H[len-1-i];
+		H[len-1-i]= temp;
+		}
+
+	for(size_t i = 0; i <= ((n-1)/2); i++){
+		int temp = H[i];
+		H[i] = H[n-i-1];
+		H[n-i-1]= temp;
+		}
+		int z = 1;
+	for(size_t i = n; i < (((len-n)/2)+n); i++){
+		//int z = 1;
+		int temp = H[i];
+		H[i] = H[len-z];
+		H[len-z] = temp;
+		z++;
+		}
+
+
+		}
