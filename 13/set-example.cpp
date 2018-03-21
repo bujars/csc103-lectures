@@ -16,6 +16,8 @@ int main()
 	/* now run some searches: */
 	int n;
 	while (cin >> n) {
+		/* NOTE: this also works, and is a little simpler:
+		 * if (S.count(n)) {...} */
 		if (S.find(n) != S.end()) {
 			cout << n << " is a square <= 100\n";
 		}
