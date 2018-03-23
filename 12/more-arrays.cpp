@@ -16,7 +16,13 @@ int polyEval(int* a, size_t degree, int x)
 	 * vectors like we did in lecture.  Try to refer to the notes
 	 * as little as possible!
 	 * */
-	return 0;
+	int xi = 1;
+	int sum = a[0];
+	for(size_t i = 1; i <= degree; i++){
+	xi*=x;
+		sum+= a[i]*xi;
+		}
+	return sum;
 }
 
 /* Example 2: Horner's rule for polynomial evaluation:
@@ -27,7 +33,13 @@ int polyEval(int* a, size_t degree, int x)
 int hornerEval(int a[], size_t degree, int x)
 {
 	/* TODO: write this.  Try not to look at the notes much. */
-	return 0;
+
+	//note degee is size - 1
+	int sum = a[degree];
+	for(int i = 1; i <= degree; i++){
+		sum = (sum*x + a[degree-i]);
+		}
+	return sum;
 }
 
 /* TODO: write a function that takes an array, and its size, and applies

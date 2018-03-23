@@ -121,7 +121,7 @@ int main()
 			if(bF && (S1.find(*begin) != S1.end())){
 				I.insert( *begin);
 			}
-			else if(S2.find(*begin) != S2.end()){
+			else if(!bF && S2.find(*begin) != S2.end()){
 				I.insert(*begin);
 			}
 		}
