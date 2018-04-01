@@ -54,6 +54,15 @@ int hornerEval(int a[], size_t degree, int x)
 
 void randPerm(int* A, size_t n)
 {
+	for(size_t i = n-1; i > 0; --i){
+			int ran = rand();
+			cout << ran;
+			int rand = ((ran) % (int(i)+ 1));
+			cout << "this" << rand << endl;
+			int temp = A[i];
+			A[i] = A[rand];
+			A[rand] = temp;
+		}
 }
 
 int main() {
@@ -68,7 +77,17 @@ int main() {
 	/* NOTE: you will need random numbers of course for the above exercise.
 	 * Here is how you can get them: */
 	// random number test:
-	cout << "random number: " << rand() << endl;
+	int D[] = {2, 4, 5, 3, 6, 8, 9, 1, 0, 7};
+	//cout << "random number: " << rand()% 9 << endl;
+	for(int i = 0; i < 10; i++){
+			cout << D[i] << endl;
+		}
+	randPerm(D, 10);
+
+	for(int i = 0; i < 10; i++){
+			cout << D[i] << endl;
+		}
+	//cout << C << endl;
 	// the above number will always be the same, unless you set the seed
 	// like this:
 	srand(time(0));
