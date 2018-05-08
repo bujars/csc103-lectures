@@ -18,7 +18,7 @@ int main()
 	int& x = *p; /* this is called *aliasing* */
 	printf("x == %i\n",x);
 	int A[10];
-	// int A[x];
+	 //int A[x];
 	/* TODO: uncomment the above line (note the non-constant array size)
 	 * and see which compiler errors you get.  NOTE: if you don't compile
 	 * with the makefile, it will silently do some dynamic memory alloacation
