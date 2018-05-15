@@ -101,7 +101,7 @@ bool search(int* A, int size, int x)
 		size = size / 2;
 	else
 		size = size + (size/2);*/
-	return search(A, size, x);
+	//return search(A, size, x);
 }
 
 /* TODO: try to write down that recursive sorting algorithm we outlined
@@ -150,9 +150,12 @@ void mergeSort(int* A, size_t n, int* aux)
 	int* R = (A+(n/2)+1);
 	mergeSort(L, n/2, aux);
 	mergeSort(R, n/2, aux);
-	
-	
+
+
 	merge(L, n/2, R, n/2, aux);
+
+
+	/*NOTE, don't recall that this is correct, refer to paper notes taken in class*/
 }
 //#endif
 

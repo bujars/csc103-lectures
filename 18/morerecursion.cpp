@@ -9,7 +9,19 @@ using std::endl;
  * have to). */
 int xgcd(int a, int b, int& x, int& y)
 {
-	return 0;
+	if(b == 0){
+		x = 1;
+		y = 0;
+		return a;
+	}
+	int xx, yy, q= a/b, r= a%b;
+	cout << q << endl << r << endl;
+	int d = xgcd(b, r, xx, yy);
+	x = yy;
+	cout << x << endl;
+	y = xx - q*yy;
+	cout << y << endl;
+	return d;
 }
 
 void xgcdTest()
@@ -19,6 +31,11 @@ void xgcdTest()
 
 int main(int argc, char** argv)
 {
-	xgcdTest();
+	int a = 1;
+	int b = 2;
+	int x = xgcd(18, 12, a, b);
+	cout << x << endl;
+	cout << a << endl;
+	cout << b << endl;
 	return 0;
 }

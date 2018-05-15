@@ -35,6 +35,25 @@ delete p; /* destructor called for (*p) */
 #endif
 
 /* TODO: erase the push_back implementation and write it from scratch */
+/* NOTE: This was my incorrect version. 
+ * Was missing some aspects. 
+ * Also note that I didn't take into consideration if size is less that zero or anything. 
+ * I also only added one to the cacpatiy which isn't efficent -- refer to skeiths notes from the lesson. 
+ * I also assumed that capcity and size are equal vales;
+ *
+ * Vector2 (should be int* because we are inside a Vector2 and one is just a pointer) ret = new int[this->capacity+1];
+ * for(int i = 0; i < this->size; i++){
+ *   	ret[i] = this->data[i];
+ *  }
+ * 	ret[this->size] = x;
+ * 	this->capacity = this->capacity + 1; //should be capacity*2 //as its the most efficent way to incorperate more space.
+ * 	this->size = this->capacity; //note this is not good if capactiy is far greater 
+ *  //than one of size before setting it because it would then fill the vector with random things.
+ *  delete[] this->data;
+ *  this->data = ret; 
+ * 
+ */
+
 void vector2::push_back(int x)
 {
 	/* first, make sure we have enough capacity: */

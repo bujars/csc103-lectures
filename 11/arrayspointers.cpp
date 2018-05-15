@@ -8,6 +8,7 @@ void shift(int* H, size_t len, size_t n);
 void swapP(int* p1, int* p2);
 
 int main() {
+#if 0
 	/* ARRAYS: OVERVIEW
 	 * Arrays in C/C++: kind of like a "dumb" version of std::vector.
 	 * It has no concept of its size.  It has no fancy member functions
@@ -105,7 +106,9 @@ int main() {
 	char* p1 = &c;
 	char* p2 = &d;
 	cout << p1 << " " << p2 << " " << (p1+1) << " " << (p2+1) << " " << (p1+4) << " "<< (p2+4) << endl;
-//#if 0
+#endif
+
+#if 0
 
 
 	//NOTE NOTE NOTE testing shift
@@ -118,14 +121,14 @@ int main() {
 		cout << H[i] << " ";
 		}
 		cout << endl;
-
+#endif
 		int fu = 1;
 		int gu = 2;
 		int* pp1 = &fu;
 		int* pp2 = &gu;
 		cout << fu << " " << gu << endl;
 		swapP(pp1, pp2);
-		cout << fu << " " << gu << endl;
+		cout << pp1 << " " << pp2 << endl;
 
 
 
@@ -142,11 +145,35 @@ int main() {
  * what I'm asking for...
  * */
 
+
+
+/*
+ *
+ * NOTE: This swaps what's inside the arrays, not it's addresses/ 
+ *
+ * */
 void swapP(int* p1, int* p2){
-	int temp = *p1;
-	*p1 = *p2;
-	*p2 = temp;
-	}
+	cout << p1 << " " << p2 << endl;	
+	int *temp  = p2;
+	//cout << &x;
+	cout << temp << endl;
+	int y = *p1;
+	//cout 
+	p2 = p1;
+	cout << p2 << endl;
+	p1 = temp;
+	cout << p1 << endl;
+	
+/*	cout << p1 << p2 << endl;
+	int *temp = p1;
+	cout << temp << endl;
+	p1 = p2;
+	cout << p1 << endl;
+	p2 = temp;
+	cout << p2 << endl;
+*/	}
+
+#if 0
 
 /* TODO: if the type of p is int*, can you guess what the
  * type of &p would be? */
@@ -186,5 +213,5 @@ void shift(int* H /* the array */,
 		z++;
 		}
 
-
-		}
+#endif
+	//	}

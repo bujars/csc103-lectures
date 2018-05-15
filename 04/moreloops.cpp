@@ -57,9 +57,9 @@ int main()
 	 * 4. Finally, print the results.
 	 * */
 
-	/* NOTE NOTE NOTE 
+	/* NOTE NOTE NOTE
 	 * My attempt at calculating the Max. Refer to looseleaf notes. (Similar to what I have typed) --2/12/18
-	 * 
+	 *
 	 * */
 #if 0
 	int n; //inputted value
@@ -71,11 +71,13 @@ int main()
 			max = n; //Set new max value
 	}
 	cout << max << endl;
-#endif
+:#endif
 
-	/* NOTE NOTE NOTE 
+	/* NOTE NOTE NOTE
 	 * My attempt at calculating the sum. Refer to looseleaf notes. (Similar to what I've typed) --2/12/18
 	 * */
+#endif
+
 #if 0
 	int n; //used to store the current inputted value.
 	int sum; //used for accumulating sum.
@@ -88,7 +90,7 @@ int main()
 #endif
 
 
-	/* NOTE NOTE NOTE 
+	/* NOTE NOTE NOTE
 	 * My attemot at calculating the product. Refer to notes. (Similar to what I've typed) --2/12/18
 	 * */
 #if 0
@@ -108,7 +110,7 @@ int main()
 	 * */
 #if 0
 	int n; //where current input value lives
-	double sum; //note this is a double because it will be divided at the end. 
+	double sum; //note this is a double because it will be divided at the end.
 	int count = 1; //this is to keep track of the number of values we've added used for division
 	cin >> n; //take first input and store in n.
 	sum = n; //store first input in sum. Note this still works as it converts the int to a double.
@@ -125,16 +127,16 @@ int main()
 	 * could have, then walk *backwards* until you find the first
 	 * value that divides both inputs. */
 	/* Range of possibilities for a valid answer: {min{a,b}...1} */
-	
+
 	/* NOTE NOTE NOTE
-	 * IDEA: This is my attmept to the above. 
+	 * IDEA: This is my attmept to the above.
 	 * */
 #if 0
 	int n; //To store first inputted value
 	int k; //To store second inputted value
 	cin >> n; //input first value
 	cin >> k; //input second value
-	int gcd = 1; //Keep at one as there then isn't a divisor. 
+	int gcd = 1; //Keep at one as there then isn't a divisor.
 	if(n ==k){ /* Check to see if these values are equal. */
 		gcd = n; //or k it doesnt matter
 	}
@@ -145,27 +147,27 @@ int main()
 		gcd = k;
 	}
 	while((gcd != 0) && !(n%gcd == 0 && k%gcd == 0)) /* This makes sure that our greatest common factor is not 0 and isnt already a divisor. */
-		--gcd; //This keeps lowering the value of the gcd until it finds it. 
-	/*if(gcd == 1) // NOTE this was to say there is no divisor if one is the only divisor but technically, 1 is still a divisor between the two.  
+		--gcd; //This keeps lowering the value of the gcd until it finds it.
+	/*if(gcd == 1) // NOTE this was to say there is no divisor if one is the only divisor but technically, 1 is still a divisor between the two.
 		cout << "There is no gcd." << end; */
 	cout << gcd << endl;
 #endif
 
 	/* TODO: brute force test for perfect cubes.  Check if
 	 * n = k^3 for some integer k.  */
-	/* NOTE NOTE NOTE
-	 * Basically the thinking is, 
-	 * given a value n and given a value k. 
-	 * We then multiply k by itself 3 times, 
+	/* NOTE NOTE NOTe
+	 * Basically the thinking is,
+	 * given a value n and given a value k.
+	 * We then multiply k by itself 3 times,
 	 * and compare that value in n.
 	 * */
-#if 0 //Note this code works, but only works once. The main point is for it to loop. 
+#if 0 //Note this code works, but only works once. The main point is for it to loop.
 	int n, k;
 	cin >> n >> k;
 	if(n == (k*k*k))
 		cout << "It's a perfect cube!" << endl;
 	else
-		cout << "Not a perfect cube." << endl; 
+		cout << "Not a perfect cube." << endl;
 #endif
 
 
@@ -180,11 +182,11 @@ int main()
 			cout << "Not a perfect cube!" << endl;
 
 	}
-	cout << "End of program." << endl; 
+	cout << "End of program." << endl;
 #endif
 
 	/* TODO: write a loop that prints the sum of the first n odd cubes. */
-	
+
 #if 0
 	int n;
 	int sum = 0;
@@ -200,20 +202,63 @@ int main()
 	/* TODO: write code that gets an integer n from the user and prints out
 	 * the n-th term of the fibonacci sequence. */
 
+
+
+	int n;
+	int aFirst = 1;
+	int aSecond = 1;
+	int i = 1;
+	while(cin >> n){
+		if(n < 2)//This is because the first term and any number below should be 1 as we don't really know if we should check for negatives.
+			cout << 1 << endl;
+		else {
+			while(n > i){
+				int temp = aFirst;
+				aFirst = aSecond;
+				aSecond = temp + aFirst; //which are now the values of aFirst and aSecond from before the run.
+				++i;
+			}
+			cout << aSecond << endl;
+			aFirst = 1;
+			aSecond = 1;
+			i = 1;
+		}
+	}
+
+//#endif
+
+
 	/* TODO: a slight generalization of an earlier exercise: for integers
 	 * n and k, determine the largest power of k that divides n.
 	 * NOTE: see if you can formalize the invariant you used to solve this.
 	 * */
 
+/*
+	int n, k;
+	int power = 0;
+	while(cin >> n >> k){
+		while(n%k == 0)
+		{
+			++power;
+			n = n/k;
+		}
+		cout << power << endl;
+		power = 0;
+	}
+*/
+
+
+
+
 #if 0 /* NOTE NOTE NOTE : This isnt complete. Check notes on the thoughts I put around it, and maybe you can piece it together later on. */
 	int n, k; //Two variables to store values of n and k;
 	cin >> n >> k; //input n and k.
 	int power = 0;
-	while(((n%k) == 0) && (k!=1)){ //If you enter the value 1 for k, the code seems to break and go into some wierd loop where you can type just about anything. 
+	while(((n%k) == 0) && (k!=1)){ //If you enter the value 1 for k, the code seems to break and go into some wierd loop where you can type just about anything.
 		++power;
-		n = n / k; 
+		n = n / k;
 	}
-	cout << power << endl; 
+	cout << power << endl;
 #endif
 
 
@@ -221,18 +266,19 @@ int main()
 	 * stdin and outputs the *second* smallest one.  NOTE: you don't need
 	 * to store many numbers (all at once, that is) to do this!  You'll
 	 * only need a few integer variables.  Think about invariants! */
-	
-	/* 
+
+	/*
 	 * NOTE NOTE NOTE
-	 * IDEA: The way I'm  approaching this is using 3 variables, one that will store the smallest, the other the second smallest, and the last thaat we will compare the both to, and replace the largest with such value. 
+	 * IDEA: The way I'm  approaching this is using 3 variables, one that will store the smallest, the other the second smallest, and the last thaat we will compare the both to, and replace the largest with such value.
 	 *
 	 *
 	 * */
 
+#if 0
 	int s, n, l; //The variables where we will store our values. Designate: s for smallest, l for largest (second smallest), and n for the new value we keep checking
 	cin >> s >> l; //input the valies
-	if(s > l){ //Here, we exchange the two inputted values to make sure that s represents the current smallest, and l represetns the current largest. 
-		n = l; 
+	if(s > l){ //Here, we exchange the two inputted values to make sure that s represents the current smallest, and l represetns the current largest.
+		n = l;
 		l = s;
 		s = n;
 	}
@@ -247,7 +293,7 @@ int main()
 	}
 	cout << l << endl; //return the largest (second smallest)
 
-
+#endif
 
 	/* TODO: this is really basic, but good to be aware of: if you put
 	 * the arrows going the wrong way, like "cin << x" or "cout >> x",
@@ -255,19 +301,19 @@ int main()
 	 * from the compiler.  Write code with this mistake on purpose, try to
 	 * compile it, and take note of those error messages so you know where
 	 * to look if you ever see errors like that again in the future. */
-	
-	/* NOTE NOTE NOTE 
+
+	/* NOTE NOTE NOTE
 	 * Basically what it does is tell you that that certain operation doesn't exist. It will pinpoint you exactly to where the mistake is, which is helpful.
-	 * But note, its a long compiling error message tha tyou wont really forget. 
-	 * I didn't take any more detailed notes besides the above...So realize that. 
+	 * But note, its a long compiling error message tha tyou wont really forget.
+	 * I didn't take any more detailed notes besides the above...So realize that.
 	 *
-	 * */	
+	 * */
 	/*int randomInt = 0;
 	cin << randomInt;
-	cout >> randomInt; 
+	cout >> randomInt;
 	*/
-	
-	
+
+
 	return 0;
 }
 

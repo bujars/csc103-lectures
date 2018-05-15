@@ -20,6 +20,9 @@ int main()
 	for (i = 0; i < 1000; i++) {
 		V.push_back(i);
 	}
+	/* V.pop_back(); 
+	 * Aborted core dumped. The assertion that size > 0 had failed. 
+	 * */
 	fn(V);
 	for (; i < 2000; i++) {
 		V.push_back(i);
