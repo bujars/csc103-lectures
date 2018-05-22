@@ -4,7 +4,7 @@ COMMON   := -O2 -Wall -Wformat=2 -march=native -std=c++0x
 CXXFLAGS := $(CXXFLAGS) $(COMMON)
 CXX      := g++
 
-TARGETS   := ksubsets powerset perms
+TARGETS   := ksubsets perms #powerset perms
 
 .PHONY : all
 all : $(TARGETS)

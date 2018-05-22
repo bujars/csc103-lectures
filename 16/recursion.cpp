@@ -59,7 +59,7 @@ bool search(int* A, int size, int x)
 	if(A[size/2] == x)
 		return true;
 	else if(x > A[size/2])
-		A = A + (size/2);
+		A = 1+ A + (size/2);
 	size = size/2;
 	return(A, size, x);
 	//else if(x < V[])
@@ -124,7 +124,7 @@ void merge(int* L, size_t nL, int* R, size_t nR, int* S)
 	}
 	while(iL < nL) S[iS++] = L[iL++];
 	while(iR < nR) S[iS++] = R[iR++];
-	iR = 0, iL = 0, iS = 0;
+	//iR = 0, iL = 0, iS = 0;
 	while(iL < nL){
 		L[iL++] = S[iS++];
 	}
@@ -164,19 +164,19 @@ int main()
 {
 	//f(3);
 	//printVertically(2358);
-	int B[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	int B[11] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
 	bool b = search(B, 6, 1);
 	cout << b << endl;
-	cout << search(B, 10, 2) << endl;
-	cout << search(B, 10, 3) << endl;
-	cout << search(B, 10, 4) << endl;
-	cout << search(B, 10, 5) << endl;
-	cout << search(B, 10, 6) << endl;
-	cout << search(B, 10, 7) << endl;
-	cout << search(B, 10, 8) << endl;
-	cout << search(B, 10, 9) << endl;
-	cout << search(B, 10, 10) << endl;
-
+	cout << search(B, 11, 2) << endl;
+	cout << search(B, 11, 3) << endl;
+	cout << search(B, 11, 4) << endl;
+	cout << search(B, 11, 5) << endl;
+	cout << search(B, 11, 6) << endl;
+	cout << search(B, 11, 7) << endl;
+	cout << search(B, 11, 8) << endl;
+	cout << search(B, 11, 9) << endl;
+	cout << search(B, 11, 10) << endl;
+	cout << search(B, 11, 11) << endl;
 
 	/* how to call merge sort: */
 	int A[10] = {33,2,19,6,7,3,22,71,18,49};

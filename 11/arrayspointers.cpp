@@ -108,20 +108,21 @@ int main() {
 	cout << p1 << " " << p2 << " " << (p1+1) << " " << (p2+1) << " " << (p1+4) << " "<< (p2+4) << endl;
 #endif
 
-#if 0
+//#if 0
 
 
 	//NOTE NOTE NOTE testing shift
-	int G[] = {0, 1, 2, 3, 4, 5};
+	int G[] = {1, 2, 3, 4, 5};
 	int* H = G;
-	size_t len = 6;
+	size_t len = 5;
 	size_t n = 2;
 	shift(H, len, n);
 	for(int i = 0; i < len; i++){
 		cout << H[i] << " ";
 		}
 		cout << endl;
-#endif
+//#endif
+#if 0
 		int fu = 1;
 		int gu = 2;
 		int* pp1 = &fu;
@@ -130,7 +131,7 @@ int main() {
 		swapP(pp1, pp2);
 		cout << pp1 << " " << pp2 << endl;
 
-
+#endif
 
 	return 0;
 	/* TODO: declare another pointer (say p2) to a character, initialize it
@@ -173,7 +174,7 @@ void swapP(int* p1, int* p2){
 	cout << p2 << endl;
 */	}
 
-#if 0
+//#if 0
 
 /* TODO: if the type of p is int*, can you guess what the
  * type of &p would be? */
@@ -213,5 +214,5 @@ void shift(int* H /* the array */,
 		z++;
 		}
 
-#endif
-	//	}
+//#endif
+		}

@@ -28,23 +28,27 @@ vector<vector<int> > perms(vector<int> V)
 		 * 4. add each of the above to our answer R.
 		 * */
 		/* Here's an answer, protected with rot13 so as not to spoil it : ) */
-		#if 0
-		vag ynfg = I[v];
-		I[v] = I[I.fvmr()-1];
-		/* abj rkpyhqr gur ynfg ryrzrag, pbzchgr nyy crezhgngvbaf,
-		 * gura fgvpx ynfg ryrzrag onpx ba. */
-		I.cbc_onpx();
-		irpgbe<irpgbe<vag> > G = crezf(I);
-		/* ABGR: guvf vfa'g oernxvat nal ehyrf nf I vf abj fznyyre! */
-		/* jung'f va E? crezhgngvbaf bs nyy bs I jvgubhg ynfg.  jung'f
-		 * yrsg? nqq ynfg onpx gb rnpu bs gurfr va gur ynfg cynpr. */
-		sbe (fvmr_g w = 0; w < G.fvmr(); w++) {
-			G[w].chfu_onpx(ynfg);
-			E.chfu_onpx(G[w]);
+		#if 1
+		int last = V[i];
+		cout << "Vlast = " << V[i] << "\n";
+		V[i] = V[V.size()-1];
+		cout  <<"V[i] = " << V[i] << "\n";
+		/* now exclude the last element, compute all permutations,
+		 * then stick last element back on. */
+		V.pop_back();
+		vector<vector<int> > T = perms(V);
+		/* NOTE: this isn't breaking any rules as V is now smaller! */
+		/* what's in R? permutations of all of V without last.  what's
+		 * left? add last back to each of these in the last place. */
+		for (size_t j = 0; j < T.size(); j++) {
+			T[j].push_back(last);
+			R.push_back(T[j]);
 		}
-		/* abj erfgber irpgbe sbe arkg vgrengvba: */
-		I.chfu_onpx(I[v]);
-		I[v] = ynfg;
+		/* now restore vector for next iteration: */
+		V.push_back(V[i]);
+		V[i] = last;
+
+		cout << "V[i2] = " << V[i] << "\nV[last] = " << V[V.size()-1] << "\n";
 		#endif
 		/* If you want to see the answer: in vim, go to visual mode and select
 		 * all the nonsense above between the #if..#endif and then type "g?".
